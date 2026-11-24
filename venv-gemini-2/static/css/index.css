@@ -1,0 +1,144 @@
+:root {
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: #173b36;
+    background: #f2f7f5;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecalho {
+    width: min(920px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.cabecalho img {
+    display: block;
+    width: 184px;
+    height: auto;
+}
+
+.main {
+    width: min(920px, calc(100% - 32px));
+    flex: 1;
+    min-height: 0;
+    margin: 0 auto 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.chat {
+    flex: 1;
+    min-height: 320px;
+    overflow-y: auto;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    border: 1px solid #dce9e5;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 12px 32px rgb(23 59 54 / 7%);
+}
+
+.chat__bolha {
+    max-width: min(75%, 620px);
+    margin: 0;
+    padding: 14px 18px;
+    border-radius: 18px;
+    line-height: 1.55;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.chat__bolha--bot {
+    border: 1px solid #e1ece8;
+    border-bottom-left-radius: 5px;
+    background: #f3f8f6;
+}
+
+.chat__bolha--usuario {
+    align-self: flex-end;
+    border-bottom-right-radius: 5px;
+    background: #087f6b;
+    color: #fff;
+}
+
+.entrada__container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #dce9e5;
+    border-radius: 16px;
+    background: #fff;
+    box-shadow: 0 8px 24px rgb(23 59 54 / 6%);
+}
+
+.entrada__container button {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    border-radius: 12px;
+    background: #087f6b;
+    color: #fff;
+    font: inherit;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.entrada__container button:disabled {
+    background: #d7e5e0;
+    color: #66817a;
+    cursor: not-allowed;
+}
+
+.entrada__container button img {
+    width: 22px;
+    height: 22px;
+}
+
+.entrada__input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 8px;
+    border: 0;
+    outline: none;
+    color: inherit;
+    font: inherit;
+    font-size: 16px;
+}
+
+.entrada__input::placeholder {
+    color: #81958f;
+}
+
+@media (max-width: 600px) {
+    .cabecalho {
+        padding: 16px 0;
+    }
+
+    .chat {
+        padding: 16px;
+    }
+
+    .chat__bolha {
+        max-width: 90%;
+    }
+}
